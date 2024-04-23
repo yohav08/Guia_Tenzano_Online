@@ -5,9 +5,9 @@
 **/
   function detectarCambioModoColor(event) {
     if (event.matches) { // Modo oscuro
-        icon.href="./img/icon/icon-dark.png";
+        icon.href="./img/icon/icon-dark.ico";
     } else { // Modo claro
-        icon.href="./img/icon/icon-light.png";
+        icon.href="./img/icon/icon-light.ico";
     }
   }
   // *Crea un objeto MediaQueryList que representa la media query prefers-color-scheme
