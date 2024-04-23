@@ -1,8 +1,7 @@
 
 /* *----------------------------------------------------------*
  * *------------------ # Estilos Generales #------------------*
- * *----------------------------------------------------------*
-**/
+ * *----------------------------------------------------------*/
 
 html {
     scroll-behavior: smooth;
@@ -12,7 +11,6 @@ body {
     font-family: "Open Sans", sans-serif;
     color: #444444;
     margin: 0;  
-    /* background-color: #51ff0080; */
 }
 
 main{
@@ -30,10 +28,13 @@ a:hover {
 }
   
 h1,h2,h3,h4,h5,h6 {
-    /* font-family: Raleway, sans; */
     font-family: "Raleway", sans-serif;
 }
 
+
+/* *
+ * *Nav-Bar para computadores
+ * */
 
 header { 
     position: fixed;
@@ -47,7 +48,6 @@ header {
     padding: 1.5% 4%;
     background-color: rgba(0, 0, 0, 0.6);
     transition: 0.3s;
-    /* flex-wrap: wrap; */
 }
 
 .logo {
@@ -58,76 +58,25 @@ header {
     list-style-type: none;
     display: flex;
     gap: 1rem;
-    
 }
 
 .nav-list  a:hover {
     color: #ffc451;
-    
 }
 
 .nav-list li a {
     text-decoration: none;
-    color: white;
-    
+    color: white;   
 }
 
-/* Botón Nav-Bar responsive */
 input#abrir-cerrar, .toggle-button{
     display: none;
 }
 
 /* *----------------------------------------
- * *--------------POP UP BUTTON-------------
+ * *-------------NAVBAR MOBILE--------------
  * *----------------------------------------*/
- button {
 
-    font-size: 1rem;
-    font-weight: 700;  
-    width: 250px;
-    height: 40px;
-    background: #ffc451;
-    color: #000000;
-    cursor: pointer;
-
-    border-radius: 15px;
-    border: none;
-    transition: all 0.3s;
-  }
-  
-  button:hover {
-    background: #000000;
-    color: #FAFAFA;
-  }
-  
-  dialog {
-    display: flexbox;
-    max-width: 450px;
-    min-width: 100px;
-    padding: 40px 70px;
-    background-color: #FAFAFA;
-    border-radius: 14px;
-    border: none;
-  }
-
-
-  /* transition: all 0.5s ease-in-out; */
-
-
-  dialog::backdrop {
-    background: rgba(0, 0, 0, 0.6);
-  }
-  
-  dialog p {
-    color: #321c3b;
-  }
-
-
-
- 
-/*----------------------------------------
-# Barra de Navegación en Celulares
-----------------------------------------*/
 
 @media screen and (max-width: 940px) {
 
@@ -271,18 +220,14 @@ input#abrir-cerrar, .toggle-button{
 }
 
 
-
-
-/*--------------------------------------------------------------
-# Hero Section
---------------------------------------------------------------*/
-
+/* *----------------------------------------
+ * *-------------tENZA SECCIÓN--------------
+ * *----------------------------------------*/
 
 /* 
     .class 
     #id
 */
-
 
 .container-tenza{
     justify-content: center; 
@@ -295,7 +240,6 @@ input#abrir-cerrar, .toggle-button{
     height: auto;
     /* flex: 0 0 40%; */
 }
-
 
 #tenza {
     width: 100%;
@@ -353,11 +297,60 @@ input#abrir-cerrar, .toggle-button{
     }
 }
   
+/* *----------------------------------------
+ * *-------------POP UP BUTTON--------------
+ * *----------------------------------------*/
+
+ .popup-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+  
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+  
+.popup-content p {
+    margin-bottom: 20px;
+}
+  
+.PopUp button {
+    font-size: 1rem;
+    font-weight: 700;  
+    width: 250px;
+    height: 40px;
+    background: #ffc451;
+    color: #000000;
+    cursor: pointer;
+    border-radius: 15px;
+    border: none;
+    transition: all 0.3s ease; 
+}
+  
+.PopUp button:hover {
+    background: #000000;
+    color: #FAFAFA;
+    transition: all 0.3s ease; 
+}
+
+/* *---------------------------------------
+ * *----------------FOOTER-----------------
+ * *---------------------------------------*/
 
 
-/*--------------------------------------------------------------
-# Footer
---------------------------------------------------------------*/
 footer {
     background: black;
     padding-bottom: 30px;
@@ -387,10 +380,10 @@ footer {
     margin-left: auto;
     margin-right: auto;
 }
-  
-/*
-* Footer (logo) - Computador
-*/
+ 
+/* *
+ * *Footer - Computador
+ * */
 @media screen and (min-width: 991px) {
     #footer img {
         width: 150px; 
@@ -398,9 +391,9 @@ footer {
     }
 }
 
-/*
-* Footer (logo) - Celular
-*/
+/* *
+ * *Footer - Celular
+ * */
 @media screen and (max-width: 992px) {
     #footer img {
         width: 100px; 
@@ -408,11 +401,10 @@ footer {
     }
 }
 
+/* *-----------------------------------------
+ * *----------VOLVER ARRIBA BUTTON-----------
+ * *-----------------------------------------*/
 
-
-/*--------------------------------------------------------------
-# Back to top button
---------------------------------------------------------------*/
 .back-to-top {
     display: none;
     position: fixed;
@@ -444,9 +436,11 @@ footer {
     opacity: 1;
 }
   
-/*--------------------------------------------------------------
-# Disable aos animation delay on mobile devices
---------------------------------------------------------------*/
+
+/* *------------------------------------------------------
+ * *---Desactivar animación aos en dispositivos móviles---
+ * *------------------------------------------------------*/
+
 @media screen and (max-width: 768px) {
     [data-aos-delay] {
       transition-delay: 0 !important;

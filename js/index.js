@@ -44,6 +44,31 @@
   }
 
 
+/** 
+ * * Esta función se encarga de abrir  y cerrar el Pop-Up
+ * ! Correjir lo responsive (991px a 992px)
+ * TODO: Responsive
+**/ 
+const openBtn = document.getElementById('open-popup');
+const closeBtn = document.getElementById('close-popup-btn');
+const popup = document.getElementById('pop-up');
+
+openBtn.addEventListener('click', () => {
+  popup.style.display = 'flex';
+  setTimeout(() => {
+    popup.style.opacity = '1';
+  }, 50);
+});
+
+closeBtn.addEventListener('click', () => {
+  popup.style.opacity = '0';
+  setTimeout(() => {
+    popup.style.display = 'none';
+  }, 300);
+});
+
+
+
 
 /** 
  * * Esta función se encarga de volver Arriba
