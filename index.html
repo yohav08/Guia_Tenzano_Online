@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Tenzano Online</title>
+
+    <!-- Revisar el meta de la descripción - clave para ser encontrado -->
+    <meta content="Vacaciones en Tenza: Información sobre turismo, gastronomía y alojamiento para los viajeros" name="description">
+    <meta content="Tenza, tenza boyaca, turismo tenza, guias tenza, viajes tenza, restaurantes tenza, hoteles tenza, turismo tenza, guias turisticas, guias viajar, guias de viaje, guias de turismo, informacion turistica, informacion tenza" name="keywords">
+
+     <!-- Desactivar la detección automática de #teléfono, email, Dir-Postal -->
+    <meta name="format-detection" content="telephone=no"> 
+    <meta name="format-detection" content="email=no">
+    <meta name="format-detection" content="address=no">
+    <!-- Icono -->
+    <link id="icon" rel="icon" type="image/png" >
+
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+
+  <header>
+      <a href="./index.html">
+        <img class="logo" src="./img/logo-w.png" alt="Logo">
+      </a>
+      <input id="abrir-cerrar" onclick="OpenClose()" name="abrir-cerrar" type="checkbox" value="" />
+      <label for="abrir-cerrar" class="toggle-button">
+          <span class="cerrar" title="Cerrar">Cerrar</span>
+          <span class="abrir" title="Abrir">Abrir</span>
+      </label>
+
+      <nav class="nav" id="nav">
+        <ul class="nav-list">
+          <li> <a href="#">Inicio</a>                 </li>
+          <li> <a href="#tradicion">Tradición</a>     </li>  
+          <li> <a href="#gastronomia">Gastronomía</a> </li>
+          <li> <a href="#recreacion">Recreación</a>   </li>
+          <li> <a href="#hoteleria">Hotelería</a>     </li>
+          <li> <a href="#senderismo">Senderismo</a>   </li>
+          <li> <a href="#contacto">Contacto</a>       </li>
+        </ul>
+      </nav>
+  </header>
+
+  <!-- ======= Hero Section ======= -->
+  <section id="tenza" class="">
+    <div class="container-tenza" data-aos="fade-up" data-aos-delay="150">
+
+      <div class="descripcion" >
+        <h1>Tenza, Boyacá<span>.</span></h1> <br>
+        <p style="color: aliceblue;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati voluptate nam asperiores libero, porro dolorem repellendus provident, dignissimos alias id natus animi eius quibusdam laudantium iusto expedita quae quidem voluptatibus.</p>
+        <p style="color: aliceblue;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati voluptate nam asperiores libero, porro dolorem repellendus provident, dignissimos alias id natus animi eius quibusdam laudantium iusto expedita quae quidem voluptatibus.</p>
+      </div>
+
+      <div class="descripcion" >
+        <iframe width="auto" height="auto" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=400&amp;hl=es&amp;q=Tenza,%20Boyac%C3%A1+(Tenza)&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+        <a href="https://www.gps.ie/car-satnav-gps/">GPS devices</a>
+        </iframe>
+      </div>
+
+      <!-- <div class="" style="">
+        <button style="background-color: transparent; text-decoration: none; border: 0;"><h2>Rutas de Acceso<span>.</span></h2></button>
+        <p style="color: aliceblue;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati voluptate nam asperiores libero, porro dolorem repellendus provident, dignissimos alias id natus animi eius quibusdam laudantium iusto expedita quae quidem voluptatibus.</p>
+      </div> -->
+      
+      
+    </div>
+  </section>
+  <!-- End Hero -->
+
+  <main>
+    <h2>Collapsed Sidepanel</h2>
+    <p>Click on the hamburger menu/bar icon to open the sidepanel.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quas cumque veniam inventore quibusdam cum hic eaque illum praesentium illo velit nostrum cupiditate esse quam, doloremque, ab corporis. Aut, harum!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quas cumque veniam inventore quibusdam cum hic eaque illum praesentium illo velit nostrum cupiditate esse quam, doloremque, ab corporis. Aut, harum!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quas cumque veniam inventore quibusdam cum hic eaque illum praesentium illo velit nostrum cupiditate esse quam, doloremque, ab corporis. Aut, harum!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quas cumque veniam inventore quibusdam cum hic eaque illum praesentium illo velit nostrum cupiditate esse quam, doloremque, ab corporis. Aut, harum!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quas cumque veniam inventore quibusdam cum hic eaque illum praesentium illo velit nostrum cupiditate esse quam, doloremque, ab corporis. Aut, harum!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quas cumque veniam inventore quibusdam cum hic eaque illum praesentium illo velit nostrum cupiditate esse quam, doloremque, ab corporis. Aut, harum!</p>
+    
+    <table border="1" >
+
+      <tr>
+        <td> <h1>Tenza, Boyacá<span>.</span></h1> </td>
+        <td rowspan="2">Iframe de Maps</td>
+      </tr>
+      <tr>
+        <th>Descripcíon de Tenza</th>
+      </tr>
+      <tr>
+        <td colspan="2" > 
+          <button onclick="window.modal1.showModal();">Ver Rutas de Acceso</button>
+          
+          <dialog id="modal1">
+            <h3>Para venir a Tenza Boyacá</h3>
+              <p> Tenemos las siguientes Rutas de  </p>
+              <p>La macarena, La Valle de Tenza, La patriotas</p>
+            <button onclick="window.modal1.close();">Cerrar</button>
+          </dialog>
+        </td>
+
+
+
+      </tr>
+    </table>
+
+    <p>Número de serie: <span>900-900-900</span></p>
+    <p>Número de teléfono: <a href="tel:+34-900-900-900">900-900-900</a></p>
+  </main>
+
+  <!-- Inicio del Footer -->
+  <footer id="footer">
+    <div class="">
+      <a href="index.html"  class="log-foot">
+        <img class="log-img" src="./img/logo-w.png" alt="Guía Tenzano Online">
+      </a>
+
+      <div class="copyright">
+        &copy; Copyright <strong><span>Gp</span></strong>. All Rights Reserved
+      </div>
+
+      <div class="credits">
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        Inspired by <a href="https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-template/">BootstrapMade</a>
+      </div>
+
+    </div>
+  </footer>
+  <!-- Final del Footer -->
+
+  <!-- ======= Back to Top Button & Preloader ======= -->
+  <!-- <div id="preloader"></div> -->
+  <a href="#" onclick="topFunction()" id="back-to-top" class="back-to-top">
+    <svg id="back-svg" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-up-short" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5"/>
+    </svg>
+  </a>
+  <!-- End -->
+
+  <script src="./js/index.js"></script>
+</body>
+</html>

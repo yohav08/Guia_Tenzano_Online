@@ -1,0 +1,454 @@
+
+/* *----------------------------------------------------------*
+ * *------------------ # Estilos Generales #------------------*
+ * *----------------------------------------------------------*
+**/
+
+html {
+    scroll-behavior: smooth;
+}
+  
+body {
+    font-family: "Open Sans", sans-serif;
+    color: #444444;
+    margin: 0;  
+    /* background-color: #51ff0080; */
+}
+
+main{
+    margin: 1.2rem;
+}
+  
+a {
+    color: #ffc451;
+    text-decoration: none;
+}
+  
+a:hover {
+    color: #ffd584;
+    text-decoration: none;
+}
+  
+h1,h2,h3,h4,h5,h6 {
+    /* font-family: Raleway, sans; */
+    font-family: "Raleway", sans-serif;
+}
+
+
+header { 
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between !important;
+    box-sizing: border-box;
+    padding: 1.5% 4%;
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: 0.3s;
+    /* flex-wrap: wrap; */
+}
+
+.logo {
+    max-width: 8rem;
+}
+
+.nav-list {
+    list-style-type: none;
+    display: flex;
+    gap: 1rem;
+    
+}
+
+.nav-list  a:hover {
+    color: #ffc451;
+    
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: white;
+    
+}
+
+/* Botón Nav-Bar responsive */
+input#abrir-cerrar, .toggle-button{
+    display: none;
+}
+
+/* *----------------------------------------
+ * *--------------POP UP BUTTON-------------
+ * *----------------------------------------*/
+ button {
+
+    font-size: 1rem;
+    font-weight: 700;  
+    width: 250px;
+    height: 40px;
+    background: #ffc451;
+    color: #000000;
+    cursor: pointer;
+
+    border-radius: 15px;
+    border: none;
+    transition: all 0.3s;
+  }
+  
+  button:hover {
+    background: #000000;
+    color: #FAFAFA;
+  }
+  
+  dialog {
+    display: flexbox;
+    max-width: 450px;
+    min-width: 100px;
+    padding: 40px 70px;
+    background-color: #FAFAFA;
+    border-radius: 14px;
+    border: none;
+  }
+
+
+  /* transition: all 0.5s ease-in-out; */
+
+
+  dialog::backdrop {
+    background: rgba(0, 0, 0, 0.6);
+  }
+  
+  dialog p {
+    color: #321c3b;
+  }
+
+
+
+ 
+/*----------------------------------------
+# Barra de Navegación en Celulares
+----------------------------------------*/
+
+@media screen and (max-width: 940px) {
+
+    /* Ocultamos el input y le damos estilos al label */
+    input#abrir-cerrar, .toggle-button{
+        z-index: 200;
+    }
+
+    input#abrir-cerrar { 
+        visibility:hidden;
+        position: absolute;
+        top: -9999px;
+    }
+    
+    .toggle-button {
+        display:block;
+        width:50px;
+        height:50px;
+        position:relative;
+        cursor: pointer;
+        box-sizing: border-box;
+    }
+
+    /* Usamos los :before y :after del label para dibujar las tres rayitas */
+    .toggle-button:before, .toggle-button:after {
+        position:absolute;
+        display:block;
+        content:" ";
+        width: calc(100% / 2);               
+        box-sizing: border-box;
+        left: calc(100% / 4);
+        transition: all 0.2s ease-out;
+    }
+
+    .toggle-button:before {
+        top: calc(100% / 4);
+        height:calc(100% / 4);
+        border-top:1px solid aliceblue;
+        border-bottom:1px solid aliceblue;
+        background-color: transparent;
+    }
+
+    .toggle-button:after {
+        height:1px;
+        background-color:aliceblue;
+        bottom:calc(100% / 4);
+    }
+
+    /* Hacemos clic y el input queda como :checked, así que los centramos y giramos 45º en distinto sentido */
+    input#abrir-cerrar:checked + .toggle-button:before, input#abrir-cerrar:checked + .toggle-button:after {
+        top:calc(100% / 2);
+        height:1px;
+        border-bottom:0;
+    }
+
+    input#abrir-cerrar:checked + .toggle-button:before {
+        transform: rotate(45deg); 
+    }
+
+    input#abrir-cerrar:checked + .toggle-button:after {
+        transform: rotate(-45deg);
+    }
+    
+    /* Posicionamos y mostramos los <span> que nos ayudarán con los tooltips */
+
+    .abrir, .cerrar { 
+        position:absolute;
+        top:0;
+        right:0;
+        bottom:0;
+        left:0;
+        text-indent: -9999px;
+    }
+    
+    .abrir {
+        display:block;
+    }
+
+    .cerrar {
+        display:none;
+    }
+
+    input#abrir-cerrar:checked + .toggle-button .abrir {
+        display:none;
+    }
+
+    input#abrir-cerrar:checked + .toggle-button .cerrar {
+        display:block;
+    } 
+
+    /* Estilos barra de navegaci+on responsive */
+    .nav {
+        transition: 0.5s;
+        z-index: 100;
+        opacity: 0;
+        visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        gap: 1rem;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.9);
+        padding: 2rem;
+    }
+    
+    .nav-list {
+        flex-direction: column;
+        align-items: end;
+        margin-top: 40%;  
+    }
+
+    .nav-list li a {
+        color: #ecececec;
+    }
+}
+
+@media screen and (min-width: 941px){  
+    .nav {
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+
+        /* Hacemos clic y el input queda como :checked, así que los centramos y giramos 45º en distinto sentido */
+        /* input#abrir-cerrar:checked + .toggle-button:before, 
+        input#abrir-cerrar:checked + .toggle-button:after {
+            top:calc(100% / 2);
+            height:1px;
+            border-bottom:0;
+        }
+    
+        input#abrir-cerrar:checked + .toggle-button:before {
+            transform: rotate(45deg); 
+        }
+    
+        input#abrir-cerrar:checked + .toggle-button:after {
+            transform: rotate(-45deg);
+        } */
+}
+
+
+
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+
+
+/* 
+    .class 
+    #id
+*/
+
+
+.container-tenza{
+    justify-content: center; 
+    /* width: 100%;  */
+    display: inline-flex;
+}
+
+.descripcion{
+    width: auto;
+    height: auto;
+    /* flex: 0 0 40%; */
+}
+
+
+#tenza {
+    width: 100%;
+    min-height: 100vh;
+    background: url("../img/tenza.jpg") top center;
+    background-size: cover;
+    position: relative;
+}
+  
+#tenza:before {
+    content: "";
+    background: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+  
+.container-tenza {
+    position: relative;
+    margin-top: 13%;
+    text-align: center;
+}
+  
+#tenza h1 {
+    margin: 0;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 64px;
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+}
+  
+#tenza h1 span, h2 span {
+    color: #ffc451;
+}
+  
+#tenza h2 {
+    color: rgba(255, 255, 255, 0.9);
+    margin: 10px 0 0 0;
+    font-size: 24px;
+}
+  
+@media (min-width: 992px) {
+    #tenza {
+        background-attachment: fixed;
+    }
+}
+  
+@media (max-width: 768px) {
+    #tenza h1 {
+        font-size: 28px;
+        line-height: 36px;
+    }
+}
+  
+
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+footer {
+    background: black;
+    padding-bottom: 30px;
+    color: #fff;
+    font-size: 14px;
+    margin: 0;
+    position: relative;
+    bottom: 0;
+}
+  
+#footer .copyright {
+    text-align: center;
+    padding-top: 5px;
+}
+  
+#footer .credits {
+    padding-top: 10px;
+    text-align: center;
+    font-size: 13px;
+    color: #fff;
+}
+  
+#footer img {
+    display: flex;
+    padding-top: 2%;
+    padding-bottom: 1%;
+    margin-left: auto;
+    margin-right: auto;
+}
+  
+/*
+* Footer (logo) - Computador
+*/
+@media screen and (min-width: 991px) {
+    #footer img {
+        width: 150px; 
+        transition: all 0.4s;
+    }
+}
+
+/*
+* Footer (logo) - Celular
+*/
+@media screen and (max-width: 992px) {
+    #footer img {
+        width: 100px; 
+        transition: all 0.4s;
+    }
+}
+
+
+
+/*--------------------------------------------------------------
+# Back to top button
+--------------------------------------------------------------*/
+.back-to-top {
+    display: none;
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    z-index: 997;
+    background: #ffc451;
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+}
+
+.back-to-top svg {
+    width: auto;
+    color: #151515;
+    padding: 5%;
+}
+
+.back-to-top:hover svg{
+    color: white;
+}
+  
+.back-to-top:hover {
+    background: #151515;
+}
+  
+.back-to-top.active {
+    visibility: visible;
+    opacity: 1;
+}
+  
+/*--------------------------------------------------------------
+# Disable aos animation delay on mobile devices
+--------------------------------------------------------------*/
+@media screen and (max-width: 768px) {
+    [data-aos-delay] {
+      transition-delay: 0 !important;
+    }
+}
