@@ -52,6 +52,7 @@ header {
 
 .logo {
     max-width: 8rem;
+    min-width: 8rem;
 }
 
 .nav-list {
@@ -223,23 +224,10 @@ input#abrir-cerrar, .toggle-button{
 /* *----------------------------------------
  * *-------------tENZA SECCIÓN--------------
  * *----------------------------------------*/
-
 /* 
     .class 
     #id
 */
-
-.container-tenza{
-    justify-content: center; 
-    /* width: 100%;  */
-    display: inline-flex;
-}
-
-.descripcion{
-    width: auto;
-    height: auto;
-    /* flex: 0 0 40%; */
-}
 
 #tenza {
     width: 100%;
@@ -247,24 +235,21 @@ input#abrir-cerrar, .toggle-button{
     background: url("../img/tenza.jpg") top center;
     background-size: cover;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
   
 #tenza:before {
     content: "";
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.7);
     position: absolute;
     bottom: 0;
     top: 0;
     left: 0;
     right: 0;
 }
-  
-.container-tenza {
-    position: relative;
-    margin-top: 13%;
-    text-align: center;
-}
-  
+
 #tenza h1 {
     margin: 0;
     font-size: 56px;
@@ -278,10 +263,53 @@ input#abrir-cerrar, .toggle-button{
     color: #ffc451;
 }
   
-#tenza h2 {
+.titulo{
     color: rgba(255, 255, 255, 0.9);
     margin: 10px 0 0 0;
     font-size: 24px;
+}
+
+.municipio{
+    display: flex;  
+}
+
+.municipio .descripcion{
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.descripcion{
+    float: left;
+}
+
+.frame{
+    justify-content: center;
+    align-items: center;
+    float: right;
+}
+
+/** Descripción Responsive */
+@media screen and (max-width: 770px){
+    .municipio{
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+.container-tenza{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;    
+    justify-content: space-around;
+    width: 100%;
+    top: 0;
+    padding: 2rem;
+}
+
+.container-tenza {
+    position: sticky;
+    margin-top: 3.2rem;
+    text-align: center;
 }
   
 @media (min-width: 992px) {
@@ -297,54 +325,83 @@ input#abrir-cerrar, .toggle-button{
     }
 }
   
-/* *----------------------------------------
- * *-------------POP UP BUTTON--------------
- * *----------------------------------------*/
+/* *------------------------------------------------
+ * *-------------CARDS RUTAS DE ACCESO--------------
+ * *------------------------------------------------*/
 
- .popup-container {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+ table{
     justify-content: center;
     align-items: center;
-    z-index: 999;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-  
-.popup-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    text-align: center;
-}
-  
-.popup-content p {
-    margin-bottom: 20px;
-}
-  
-.PopUp button {
-    font-size: 1rem;
-    font-weight: 700;  
-    width: 250px;
-    height: 40px;
-    background: #ffc451;
-    color: #000000;
-    cursor: pointer;
-    border-radius: 15px;
+    display: flex;
+    table-layout: fixed;
+ }
+ 
+ th, td {
     border: none;
-    transition: all 0.3s ease; 
+    width: 33.3%;
+    word-wrap: break-word;
 }
-  
-.PopUp button:hover {
-    background: #000000;
-    color: #FAFAFA;
-    transition: all 0.3s ease; 
-}
+
+ .cuerpo-card{
+    
+    /* border: red 1px solid;   */
+    display: flex;
+    align-items: center;    
+    justify-content: space-evenly;
+    width: 100%;
+    flex-wrap: wrap;
+    padding: 1rem;
+ }
+
+ .card{
+    /* border: red 1px solid; */
+    width: 350px;
+    height: 350px;
+    background: url(../img/flota_valle.jpg)  no-repeat top center/cover;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+ }
+
+ .card_space{
+    padding: 1rem;
+ }
+
+ .content_card{
+    position: relative;
+    padding: 20px;
+    background-color: #fff;
+    color: #5c1a55;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    cursor: pointer;
+    transform: translateY(65%);
+    transition: transform 0.3s;
+ }
+
+ .content_card::before{
+    content: '';
+    position: absolute;
+    top: -52px;
+    right: -52px;
+
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 50%;
+ }
+ .subtitulo{
+    font-weight: normal;
+    padding-bottom: 20px;
+    font-size: 14px;
+ }
+ .subtitulo, .horarios{
+    color: #a18a96;
+ }
+ .content_card:hover{
+    transform:  translateY(0%);
+ }
 
 /* *---------------------------------------
  * *----------------FOOTER-----------------
